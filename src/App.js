@@ -12,7 +12,14 @@ function App() {
           <Dictionary />
         </main>
         <footer className="text-center">
-          Open-source code by Lindsay Ward
+          <a
+            href="https://github.com/lindsaymward/dictionary-react"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open-source code
+          </a>{" "}
+          by Lindsay Ward
         </footer>
       </div>
     </div>
