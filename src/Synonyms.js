@@ -8,6 +8,8 @@ export default function Synonyms(props) {
           <li>{synonym}</li>
         </ul>
       );
+    } else {
+      return null;
     }
   });
 }
