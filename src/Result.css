@@ -1,0 +1,14 @@
+.Result h2,
+small {
+  text-align: center;
+  color: #14213d;
+}
+
+.Result a {
+  color: #14213d;
+}
+
+.Result h2 {
+  font-weight: bold;
+  font-size: 44px;
+}

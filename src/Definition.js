@@ -11,7 +11,9 @@ export default function Definition(props) {
             {defined.definition}
             <br />
             Example: <em>{defined.example}</em>
+            <br />
             <Synonyms synonyms={defined.synonyms} />
+            <hr />
           </div>
         );
       })}

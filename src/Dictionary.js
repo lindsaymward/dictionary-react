@@ -33,14 +33,23 @@ export default function Dictionary(props) {
   if (load) {
     return (
       <div className="Dictionary">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            autoFocus={true}
-            placeholder="Enter a word..."
-            onChange={handleWordChange}
-          />
-        </form>
+        <section className="row">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              autoFocus={true}
+              placeholder="Enter a word..."
+              onChange={handleWordChange}
+              className="col-9"
+            />
+            <input
+              type="submit"
+              onClick={handleSubmit}
+              value="Search"
+              className="col-3 search"
+            />
+          </form>
+        </section>
         <Result results={results} />
       </div>
     );

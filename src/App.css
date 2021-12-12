@@ -1,3 +1,21 @@
+body {
+  background-color: #14213d;
+  padding-bottom: 20px;
+}
+
 .App-header {
-  margin: 30px 0;
+  margin: 30px 0px;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+footer {
+  color: #e5e5e5;
+}
+
+footer a {
+  color: #fca311;
 }
