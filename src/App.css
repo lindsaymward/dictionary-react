@@ -2,6 +2,7 @@ body {
   background-color: #14213d;
   padding-bottom: 20px;
   max-width: 720px;
+  margin: 0 auto;
 }
 
 .App-header {
