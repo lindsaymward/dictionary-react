@@ -3,6 +3,7 @@ import "./Synonyms.css";
 
 export default function Synonyms(props) {
   return props.synonyms.map(function (synonym, index) {
+    synonym = synonym.charAt(0).toUpperCase() + synonym.slice(1);
     if (index < 5) {
       return (
         <span className="Synonyms">

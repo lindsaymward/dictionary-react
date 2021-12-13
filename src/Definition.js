@@ -6,11 +6,16 @@ export default function Definition(props) {
     <div className="Definition">
       <h3>{props.definition.partOfSpeech}</h3>
       {props.definition.definitions.map(function (defined, index) {
+        let definition =
+          defined.definition.charAt(0).toUpperCase() +
+          defined.definition.slice(1);
+        let example =
+          defined.example.charAt(0).toUpperCase() + defined.example.slice(1);
         return (
           <div key={index}>
-            {defined.definition}
+            {definition}
             <br />
-            Example: <em>{defined.example}</em>
+            <strong>Example:</strong> <em>{example}</em>
             <br />
             <Synonyms synonyms={defined.synonyms} />
             <hr />
