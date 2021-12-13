@@ -1,0 +1,13 @@
+.Definition h3,
+p {
+  color: #14213d;
+}
+
+.Definition strong {
+  font-weight: 600;
+  color: #14213d;
+}
+
+.Definition h3 {
+  font-size: 32px;
+}
