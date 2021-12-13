@@ -20,4 +20,9 @@ footer {
 
 footer a {
   color: #fca311;
+  transition: all 100ms ease-in-out;
+}
+
+footer a:hover {
+  color: #ffffff;
 }

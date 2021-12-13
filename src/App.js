@@ -19,7 +19,14 @@ function App() {
           >
             Open-source code
           </a>{" "}
-          by Lindsay Ward
+          by{" "}
+          <a
+            href="https://www.linkedin.com/in/lindsaymward21/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Lindsay Ward
+          </a>
         </footer>
       </div>
     </div>
