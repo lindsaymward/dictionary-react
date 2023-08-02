@@ -1,39 +1,48 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createClient } from 'pexels';
 import Result from "./Result";
 import Images from "./Images";
-import "./Dictionary.css";
+
+import "../styles/Dictionary.css";
 
 export default function Dictionary(props) {
   let [word, setWord] = useState(props.defaultWord);
   let [results, setResults] = useState(null);
   let [load, setLoaded] = useState(false);
   let [images, setImages] = useState(null);
+  console.log(process.env);
+  const client = createClient(process.env.PEXELS_API_KEY);
+
+  useEffect(() => {
+    search();
+  }, [load])
 
   function loading() {
     search();
-    setLoaded(true);
+    
   }
   function handleResponse(response) {
     setResults(response.data[0]);
+    
   }
 
   function handleImageResponse(response) {
-    setImages(response.data.photos);
+    setImages(response.photos);
+    setLoaded(true);
   }
 
   function search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     axios.get(apiUrl).then(handleResponse);
 
-    const pexelsApiKey =
-      "563492ad6f917000010000012de1913ea0d84304a7137eead5e25723";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=3`;
-    axios
-      .get(pexelsApiUrl, {
-        headers: { Authorization: `Bearer ${pexelsApiKey}` },
-      })
-      .then(handleImageResponse);
+    client.photos.search({ word, per_page: 3 })
+      .then(photos => {handleImageResponse(photos)})
+    // axios
+    //   .get(pexelsApiUrl, {
+    //     headers: { Authorization: `Bearer ${process.env.PEXELS_API_KEY}` },
+    //   })
+    //   .then(handleImageResponse);
   }
 
   function handleSubmit(event) {
@@ -70,7 +79,6 @@ export default function Dictionary(props) {
       </div>
     );
   } else {
-    loading();
     return <div>"Loading..."</div>;
   }
 }
